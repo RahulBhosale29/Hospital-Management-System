@@ -1,0 +1,99 @@
+<!-- 
+<div class="container">
+
+    <label>ID : <b>{{patient.id}}</b></label><br>
+
+    <label>Name : <b>{{patient.name}}</b></label><br>
+    
+    <label>Age : <b>{{patient.age}}</b></label><br>
+    
+    <label>Blood_Group : <b>{{patient.blood_group}}</b></label><br>
+    
+    <label>Dose : <b>{{patient.dose}}</b></label><br>
+    
+    <label>Fees : <b>{{patient.fees}}</b></label><br>
+</div> -->
+
+
+
+<nav style="margin:auto" class="navbar navbar-expand-lg bg-dark">
+
+    <a style="color: white;" class="navbar-brand" href="#">SHREE GANESH HOSPITAL</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportContent" aria-controls="navbarSupportContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           
+
+            <li class="nav-item">
+                <a style="color: white ; margin-top: 5px;" class="nav-link active" aria-current="page" href="javascript:void(0);" routerLink="/doctor">Back</a>
+              </li>
+        
+               </ul>
+        
+    </div>
+</nav>
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        b {
+            font-weight: normal;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Patient Details</h1>
+        <label>ID : <b>{{patient.id}}</b></label>
+        <label>Name : <b>{{patient.name}}</b></label>
+        <label>Age : <b>{{patient.age}}</b></label>
+        <label>Blood Group : <b>{{patient.blood_group}}</b></label>
+        <label>Dose : <b>{{patient.dose}}</b></label>
+        <label>Fees : <b>{{patient.fees}}</b></label>
+    </div>
+</body>
+</html>

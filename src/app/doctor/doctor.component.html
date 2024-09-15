@@ -1,0 +1,75 @@
+
+<nav style="margin:auto" class="navbar navbar-expand-lg bg-dark">
+
+    <a style="color: white;" class="navbar-brand" href="#">SHREE GANESH HOSPITAL</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportContent" aria-controls="navbarSupportContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            
+            <li class="nav-item">
+                <a style="color: white ; margin-top: 5px;" class="nav-link active" aria-current="page" href="javascript:void(0);" routerLink="/create-patient">Add Patient</a>
+            </li>
+
+            <li class="nav-item">
+                <a style="color: white ; margin-top: 5px;" class="nav-link active" aria-current="page" href="javascript:void(0);" routerLink="/view-medicine">View medicines</a>
+              </li>
+        
+            <div class="mx-2" >
+                <button style="margin: 5px;" class=" btn btn-outline-danger" data-bs-toggle="modal" data-target="#loginModal" href="javascript:void(0);"   (click)="logout()">Logout</button>
+            </div>
+
+        </ul>
+        
+    </div>
+</nav>
+
+<div class="container">
+    
+    <h2 style="text-align: center; margin-top: 20px;"> Dashbord</h2>
+    <a style="color: rgb(86,86,86); font-size: x-large;"><marquee behavior="scroll" direction="left">Welcome To Dashbord. Please Find The Patient List Below!!.Click Add Patient To Add Patients,Click View Medicine to View and Update Medicine</marquee></a>
+    <hr>
+    <a style="color: rgb(86,86,86); font-size: xx-large;">Current patient List In the Queue</a>
+    <hr>
+    <div class="tableFixhead">
+        
+    </div>
+</div>
+
+
+
+
+<div class="container">
+<table class="table table-bordered table-striped table-hover">
+    <thead class="table-header">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>age</th>
+        <th>blood_group</th>
+        <th>urgency</th> 
+        <th>Action</th>
+    </tr>
+</thead>
+    <tbody>
+    <tr *ngFor="let patient of patients">
+
+        <td>{{patient.id}}</td>
+        <td>{{patient.name}}</td>
+        <td>{{patient.age}}</td>
+        <td>{{patient.blood_group}}</td>
+        <td>{{patient.urgency}}</td>
+        <td>
+
+            <button  (click)="update(patient.id)" class="btn btn-outline-success">Update</button>
+            <button  (click)="delete(patient.id)" class="btn btn-outline-danger" style="margin-left: 20px;">Delete</button>
+            <button  (click)="view(patient.id)" class="btn btn-outline-info" style="margin-left: 20px;">View</button>
+
+        </td>
+        
+    </tr>
+</tbody>
+</table>
+</div>

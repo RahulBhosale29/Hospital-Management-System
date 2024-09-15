@@ -1,0 +1,44 @@
+import { Component, OnInit } from '@angular/core';
+import { Medicine } from '../medicine';
+import { MedicineService } from '../medicine.service';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-medicinelist',
+  templateUrl: './medicinelist.component.html',
+  styleUrls: ['./medicinelist.component.css']
+})
+export class MedicinelistComponent implements OnInit{
+
+  medicines:Medicine[]=[];
+  
+  constructor(private medicineService:MedicineService,private router:Router){
+
+  }
+  ngOnInit(): void {
+   this.getMedicine();
+  }
+  getMedicine(){
+    this.medicineService.getMedicines().subscribe(data=>{
+      this.medicines=data;
+    })
+  }
+  update(id:number){
+
+    this.router.navigate(['update-medicine',id])
+
+  }
+
+  delete(id:number){
+
+    alert(`You Want To Delete The Medicine:${id}`);
+    this.medicineService.delete(id).subscribe(data=>{
+      console.log(data);
+      this.getMedicine();
+    })
+
+  }
+    
+
+
+}
